@@ -10,3 +10,4 @@ Artisan::command('inspire', function () {
 
 
 Schedule::command('events:update-status')->everyMinute();
+Schedule::command('events:send-reminders')->everyMinute();
