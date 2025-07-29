@@ -1,0 +1,191 @@
+table.dataTable thead th,
+table.dataTable thead td {
+    border-bottom: 1px solid #fff !important;
+}
+
+table.dataTable tfoot th,
+table.dataTable tfoot td {
+    border-top: 1px solid #ddd !important;
+}
+
+.table-bordered {
+    border-top: none !important;
+}
+
+table.dataTable tbody th,
+table.dataTable tbody td {
+    padding: 3px 10px !important;
+    font-size: 12px;
+}
+
+.card-header {
+    line-height: 0 !important;
+    /* background-color: #2a71ca !important; */
+    background: #2c3e50;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #3498db, #2c3e50);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #3498db, #2c3e50);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 16px 10px !important;
+    ;
+}
+
+.dataTables_wrapper tfoot input {
+    border: solid 1px #ddd !important;
+}
+
+tfoot button,
+select {
+    text-transform: none;
+    border: solid 1px #ddd;
+}
+
+table.table-bordered.dataTable th:last-child,
+table.table-bordered.dataTable th:last-child,
+table.table-bordered.dataTable td:last-child,
+table.table-bordered.dataTable td:last-child {
+    border-right: solid 1px #ddd !important;
+}
+
+.toolbar {
+    padding-top: 13px !important;
+}
+
+.btnAdd {
+    padding: 4px 8px !important;
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 800px !important;
+    }
+}
+
+
+/* pagination css */
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding: 0.1em 0.1em !important;
+}
+
+
+/* added by Fahim */
+
+
+/* Add to grid table Normal CSS*/
+
+table.added_table tr th {
+    background: rgb(245, 225, 199);
+    font-weight: 600;
+    font-size: 13px;
+    padding-left: 5px;
+    border: 1px solid gray
+}
+
+table.added_table tr td {
+    font-weight: 500;
+    font-size: 13px;
+    padding-left: 5px;
+    border: 1px solid gray
+}
+
+
+/*Header Fix and body scrollable css original*/
+
+
+/* table.added_table{
+    width: 100%;
+}
+table.added_table thead{
+    display: block;
+}
+table.added_table tbody{
+    display: block;
+    height: 300px;
+    overflow-y: auto;
+} */
+
+
+/*Header Fix and body scrollable css modified*/
+
+table.added_table {
+    display: flex;
+    flex-flow: column;
+    height: 300px;
+    width: 100%;
+}
+
+table.added_table thead {
+    flex: 0 0 auto;
+    width: calc(100% - 17px);
+}
+
+table.added_table tbody {
+    flex: 1 1 auto;
+    display: block;
+    overflow-y: scroll;
+}
+
+table.added_table tbody tr {
+    width: 100%;
+}
+
+table.added_table thead,
+table.added_table tbody tr {
+    display: table;
+    table-layout: fixed;
+}
+
+.error {
+    border: 1px solid red !important;
+}
+
+.select2-container--classic .select2-selection--multiple .select2-selection__choice,
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    margin-top: 5px !important;
+}
+
+
+/* custom css for forms */
+
+table.input_form {
+    width: 100%;
+}
+
+table.input_form th {
+    width: 30% !important;
+    text-align: right;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+table.input_form td {
+    width: 70% !important;
+    padding-bottom: 10px
+}
+
+table.input_form td select {
+    width: 100%;
+    padding: 3px 5px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+table.input_form td input {
+    width: 100%;
+    padding: 2px 4px;
+    font-size: 13px;
+}
+
+table.input_form td textarea {
+    width: 100%;
+    padding: 3px 6px;
+    font-size: 13px;
+}
+
+.select2-container{
+    width: 100% !important;
+}

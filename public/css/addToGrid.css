@@ -1,0 +1,88 @@
+
+/* added by Fahim */
+/* Add to grid table Normal CSS*/
+table.added_table tr th{
+    background: rgb(245, 225, 199);
+    font-weight: 600;
+    font-size: 13px;
+    padding-left: 5px;
+    border: 1px solid gray
+}
+table.added_table tr td{
+    font-weight: 500;
+    font-size: 13px;
+    padding-left: 5px;
+    border: 1px solid gray
+}
+
+/*Header Fix and body scrollable css original*/
+/* table.added_table{
+    width: 100%;
+}
+table.added_table thead{
+    display: block;
+}
+table.added_table tbody{
+    display: block;
+    height: 300px;
+    overflow-y: auto;
+} */
+
+/*Header Fix and body scrollable css modified*/
+table.added_table {
+    display: flex;
+    flex-flow: column;
+    height: 300px;
+    width: 100%;
+}
+table.added_table thead {
+    flex: 0 0 auto;
+    width: calc(100% - 17px);
+}
+table.added_table tbody {
+    flex: 1 1 auto;
+    display: block;
+    overflow-y: scroll;
+}
+table.added_table tbody tr {
+    width: 100%;
+}
+table.added_table thead, table.added_table tbody tr {
+    display: table;
+    table-layout: fixed;
+}
+
+
+/* Before Grid Table Desing */
+table.beforeGrid{
+    width: 100%;
+}
+table.beforeGrid th{
+    text-align:center;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 5px 0px;
+    vertical-align: middle;
+    background-color: rgb(245, 225, 199);
+}
+table.beforeGrid td{
+    padding: 10px 15px;
+    vertical-align: middle;
+}
+table.beforeGrid td select{
+    width: 100%;
+    padding: 3px 5px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+table.beforeGrid td input{
+    width: 100%;
+    padding: 2px 4px;
+    font-size: 13px;
+}
+table.beforeGrid td textarea{
+    width: 100%;
+    padding: 3px 6px;
+    font-size: 13px;
+}
+

@@ -1,0 +1,47 @@
+.modal-dialog .modal-content .modal-header {
+    background: #2c3e50;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #3498db, #2c3e50);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #3498db, #2c3e50);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: white;
+}
+
+.modal-dialog .modal-content .modal-header h4 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.modal-dialog .modal-content {
+    border-radius: 4px;
+}
+
+.modal-dialog .modal-content .modal-body form .form-group {
+    margin-bottom: 15px;
+}
+
+.modal-dialog .modal-content .modal-body form .form-group label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 3px;
+}
+
+.modal-dialog .modal-content .modal-body form .form-group input {
+    padding: 6px 10px;
+}
+
+.modal-dialog .modal-content .modal-body form .form-group select {
+    padding: 6px 10px;
+    height: 33px;
+}
+
+.modal-dialog .modal-content .modal-body form button {
+    background-color: #296088 !important;
+    border-color: #296088 !important;
+    padding: 7px 20px;
+}
