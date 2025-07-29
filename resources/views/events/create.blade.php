@@ -1,55 +1,85 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="max-w-2xl mx-auto p-4 bg-white shadow-md rounded-md">
-    <h2 class="text-2xl font-bold mb-4">Create Event Reminder</h2>
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-sm border-0 rounded-3">
+                <div class="card-header bg-white py-3 border-0">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h2 class="h5 mb-0">
+                            <i class="bi bi-calendar-plus me-2"></i>Create Event Reminder
+                        </h2>
+                        <a href="{{ route('events.index') }}" class="btn btn-sm btn-outline-secondary">
+                            <i class="bi bi-arrow-left me-1"></i> Back
+                        </a>
+                    </div>
+                </div>
 
-    @if ($errors->any())
-        <div class="mb-4 text-red-500">
-            <ul class="list-disc list-inside">
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+                <div class="card-body">
+                    @if ($errors->any())
+                        <div class="alert alert-danger mb-4">
+                            <h5 class="alert-heading">Please fix these errors:</h5>
+                            <ul class="mb-0">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
 
-    <form action="{{ route('events.store') }}" method="POST">
-        @csrf
-        <div class="mb-4">
-            <label for="title" class="block font-semibold">Title</label>
-            <input type="text" name="title" id="title" value="{{ old('title') }}" class="w-full border p-2 rounded" required>
-        </div>
+                    <form action="{{ route('events.store') }}" method="POST">
+                        @csrf
 
-        <div class="mb-4">
-            <label for="description" class="block font-semibold">Description</label>
-            <textarea name="description" id="description" class="w-full border p-2 rounded" rows="3">{{ old('description') }}</textarea>
-        </div>
+                        <div class="mb-4">
+                            <label for="title" class="form-label fw-semibold">Title <span class="text-danger">*</span></label>
+                            <input type="text" name="title" id="title" value="{{ old('title') }}"
+                                   class="form-control form-control-lg" required
+                                   placeholder="Meeting with team">
+                        </div>
 
-        <div class="mb-4">
-            <label for="date_time" class="block font-semibold">Date & Time</label>
-            <input type="datetime-local" name="date_time" id="date_time" value="{{ old('date_time') }}" class="w-full border p-2 rounded" required>
-        </div>
+                        <div class="mb-4">
+                            <label for="description" class="form-label fw-semibold">Description</label>
+                            <textarea name="description" id="description"
+                                      class="form-control" rows="4"
+                                      placeholder="Brief description of the event">{{ old('description') }}</textarea>
+                        </div>
 
-        <div class="mb-4">
-            <label for="participants_emails" class="block font-semibold">Participants Emails</label>
-            <input type="text" name="participants_email" class="w-full border p-2 rounded" placeholder="email@example.com">
-            <!-- You can make this dynamic with JS later -->
-        </div>
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <label for="date_time" class="form-label fw-semibold">Date & Time <span class="text-danger">*</span></label>
+                                <input type="datetime-local" name="date_time" id="date_time"
+                                       value="{{ old('date_time') }}"
+                                       class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="status" class="form-label fw-semibold">Status <span class="text-danger">*</span></label>
+                                <select name="status" id="status" class="form-select form-control">
+                                    <option value="upcoming" {{ old('status') == 'upcoming' ? 'selected' : '' }}>Upcoming</option>
+                                    <option value="completed" {{ old('status') == 'completed' ? 'selected' : '' }}>Completed</option>
+                                </select>
+                            </div>
+                        </div>
 
-        <div class="mb-4">
-            <label for="status" class="block font-semibold">Status</label>
-            <select name="status" id="status" class="w-full border p-2 rounded">
-                <option value="upcoming" {{ old('status') == 'upcoming' ? 'selected' : '' }}>Upcoming</option>
-                <option value="completed" {{ old('status') == 'completed' ? 'selected' : '' }}>Completed</option>
-            </select>
-        </div>
+                        <div class="mb-4">
+                            <label for="participants_emails" class="form-label fw-semibold">Participants Emails</label>
+                            <div class="input-group">
+                                <input type="email" name="participants_email"
+                                       class="form-control"
+                                       placeholder="email@example.com"
+                                       value="{{ old('participants_email') }}">
+                            </div>
+                        </div>
 
-        <div class="flex justify-end">
-            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                Save Event
-            </button>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="bi bi-save me-1"></i> Save Event
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-    </form>
+    </div>
 </div>
 @endsection
