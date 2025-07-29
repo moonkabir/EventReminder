@@ -9,8 +9,24 @@ class EventReminderController extends Controller
 {
     public function index()
     {
-        $events = EventReminder::latest()->paginate(10);
-        return view('events.index', compact('events'));
+        // $events = EventReminder::latest()->paginate(10);
+        // return view('events.index', compact('events'));
+
+
+
+
+        $now = now();
+        // Fetch all upcoming events
+        $events = EventReminder::where('status', 'upcoming')
+            ->where('date_time', '<', $now)
+            ->get();
+
+            dd($events);
+
+
+
+
+
     }
 
     public function create()
