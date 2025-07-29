@@ -42,6 +42,7 @@
                 <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="fas fa-boxes"></i><span>Event Reminder App</span></a>
                     <ul class="dropdown-menu">
                         <li data-menu=""><a class="dropdown-item" href="{{ url('events') }}" data-toggle="dropdown"> Admin </a></li>
+                        <li data-menu=""><a class="dropdown-item" href="{{ url('/events-upload/import') }}" data-toggle="dropdown"> Upload CSV </a></li>
                     </ul>
                 </li>
                 <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a></li>

@@ -3,6 +3,8 @@
 use App\Http\Controllers\EventReminderController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EventImportController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,6 +20,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::resource('events', EventReminderController::class);
+
+    Route::get('/events-upload/import', [EventImportController::class, 'showImportForm'])->name('events.import.form');
+    Route::post('/events-upload/import', [EventImportController::class, 'import'])->name('events.import');
 
 });
 
