@@ -1,11 +1,10 @@
-# 📅 Event Reminder System (Laravel + PWA)
+# 📅 Event Reminder System (Laravel)
 
 A Laravel-based event reminder application that supports:
 
 - ✅ Event creation & management
 - ✅ CSV event import with row-level validation
 - ✅ Email reminders (with queue & scheduling)
-- ✅ Offline usage & auto-sync (PWA ready)
 
 ---
 
@@ -124,7 +123,7 @@ npm run build
 
 ## 🙋‍♂️ Author
 
-Moon Kabir – [moon@example.com](mailto:moon@example.com)
+Moon Kabir – [moonkabir4@gmail.com](mailto:moonkabir4@gmail.com)
 
 ---
 
